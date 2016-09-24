@@ -1,7 +1,6 @@
 import _isEqual from 'lodash/isEqual';
 import oco from 'opencolor';
 import { TinyColor } from '@thebespokepixel/es-tinycolor';
-import 'color-convert';
 import chroma from 'chroma-js';
 import { pad } from '@thebespokepixel/string';
 

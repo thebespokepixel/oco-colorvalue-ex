@@ -7,7 +7,7 @@
 
 import oco from 'opencolor'
 import {TinyColor} from '@thebespokepixel/es-tinycolor'
-import convert from 'color-convert'
+// import convert from 'color-convert'
 import chroma from 'chroma-js'
 import {pad} from '@thebespokepixel/string'
 import {isEqual} from 'lodash'

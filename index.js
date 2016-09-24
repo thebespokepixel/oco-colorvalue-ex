@@ -5,7 +5,6 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var _isEqual = _interopDefault(require('lodash/isEqual'));
 var oco = _interopDefault(require('opencolor'));
 var _thebespokepixel_esTinycolor = require('@thebespokepixel/es-tinycolor');
-var colorConvert = require('color-convert');
 var chroma = _interopDefault(require('chroma-js'));
 var _thebespokepixel_string = require('@thebespokepixel/string');
 
