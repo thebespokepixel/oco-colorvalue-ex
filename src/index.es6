@@ -66,7 +66,7 @@ class OCOValueEX extends TinyColor {
 
 	static fromJSON(raw_) {
 		return new OCOValueEX(
-			tinycolor(
+			new TinyColor(
 				chroma.gl([
 					raw_.red,
 					raw_.green,

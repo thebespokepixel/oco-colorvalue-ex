@@ -56,7 +56,7 @@ class OCOValueEX extends _thebespokepixel_esTinycolor.TinyColor {
 	}
 
 	static fromJSON(raw_) {
-		return new OCOValueEX(tinycolor(chroma.gl([raw_.red, raw_.green, raw_.blue, raw_.alpha]).css()), raw_.name)
+		return new OCOValueEX(new _thebespokepixel_esTinycolor.TinyColor(chroma.gl([raw_.red, raw_.green, raw_.blue, raw_.alpha]).css()), raw_.name)
 	}
 
 	static isJSON(is_) {
