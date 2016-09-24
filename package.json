@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@thebespokepixel/cordial": "^0.16.2",
-    "ava": "^0.15.2",
+    "ava": "^0.16.0",
     "greenkeeper-postpublish": "^1.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
     "xo": "^0.16.0"
