@@ -4,7 +4,8 @@
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "scripts": {
-    "test": "xo & ava"
+    "test": "xo & ava",
+    "postpublish": "greenkeeper-postpublish"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@thebespokepixel/cordial": "^0.16.2",
     "ava": "^0.15.2",
+    "greenkeeper-postpublish": "^1.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
     "xo": "^0.16.0"
   },
