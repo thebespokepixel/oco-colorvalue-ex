@@ -6,13 +6,13 @@
  */
 
 import oco from 'opencolor'
-import tinycolor from 'tinycolor2'
+import {TinyColor} from '@thebespokepixel/es-tinycolor'
 import convert from 'color-convert'
 import chroma from 'chroma-js'
 import {pad} from '@thebespokepixel/string'
 import {isEqual} from 'lodash'
 
-class OCOValueEX extends tinycolor {
+export default class OCOValueEX extends TinyColor {
 	constructor(color_, name_, options_) {
 		super(color_, options_)
 		this._name = name_
@@ -20,6 +20,10 @@ class OCOValueEX extends tinycolor {
 
 	get alphaActive() {
 		return this._a < 1 && this._a >= 0
+	}
+
+	get name() {
+		return this._name
 	}
 
 	toSublimeUI() {
@@ -66,7 +70,7 @@ class OCOValueEX extends tinycolor {
 
 	static fromJSON(raw_) {
 		return new OCOValueEX(
-			tinycolor(
+			new TinyColor(
 				chroma.gl([
 					raw_.red,
 					raw_.green,
@@ -109,5 +113,3 @@ class OCOValueEX extends tinycolor {
 		)
 	}
 }
-
-export default OCOValueEX

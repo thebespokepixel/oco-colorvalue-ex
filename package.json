@@ -4,13 +4,23 @@
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "scripts": {
-    "test": "xo & ava",
-    "postpublish": "greenkeeper-postpublish"
+    "test": "xo && snyk test && nyc ava",
+    "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --document-exported --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/lib/index.js",
+    "doc-build": "documentation build --format html --output docs --theme node_modules/documentation-theme-bespoke --document-exported --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/lib/index.js",
+    "code-climate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
+    "coverage": "nyc ava && nyc report --reporter=lcov --report-dir test/coverage; open test/coverage/lcov-report/index.html",
+    "generate-test-fixtures": "scripts/generate-test-fixtures",
+    "postpublish": "greenkeeper-postpublish",
+    "clean": "gulp clean"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MarkGriffiths/oco-colorvalue-ex.git"
   },
+  "files": [
+    "index-es.js",
+    "index.js"
+  ],
   "keywords": [
     "Open",
     "Color",
@@ -36,15 +46,23 @@
   "devDependencies": {
     "@thebespokepixel/cordial": "^0.16.2",
     "ava": "^0.16.0",
+    "codeclimate-test-reporter": "^0.3.3",
     "greenkeeper-postpublish": "^1.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
+    "nyc": "^8.3.0",
+    "snyk": "^1.19.1",
     "xo": "^0.16.0"
   },
   "xo": {
     "semicolon": false,
-    "esnext": true
+    "esnext": true,
+    "ignores": [
+      "index*.js",
+      "lib/**",
+      "docs/**"
+    ]
   },
-  "buildNumber": 2,
+  "buildNumber": 10,
   "engines": {
     "node": ">=4.0 <7.0"
   },
