@@ -1,18 +1,18 @@
 /*
  *  Open Color
- *  ColorValue Extensions: Conversion, Color Space and Format Utilities
+ *  JSON Color and Palette formats
  *  ────────────────────────────────────────────────────────────────────────────
  *  ©2016 Mark Griffiths @ The Bespoke Pixel (MIT licensed)
  */
 
 import oco from 'opencolor'
-import {TinyColor} from '@thebespokepixel/es-tinycolor'
+import tinycolor from 'tinycolor2'
 import convert from 'color-convert'
 import chroma from 'chroma-js'
 import {pad} from '@thebespokepixel/string'
 import {isEqual} from 'lodash'
 
-class OCOValueEX extends TinyColor {
+class OCOValueEX extends tinycolor {
 	constructor(color_, name_, options_) {
 		super(color_, options_)
 		this._name = name_
