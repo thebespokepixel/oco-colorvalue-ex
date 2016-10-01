@@ -7,12 +7,8 @@
 
 import oco from 'opencolor'
 import {TinyColor} from '@thebespokepixel/es-tinycolor'
-// import convert from 'color-convert'
-import chroma from 'chroma-js'
-import {pad} from '@thebespokepixel/string'
-import {isEqual} from 'lodash'
 
-export default class OCOValueEX extends TinyColor {
+export class OCOValueEX extends TinyColor {
 	constructor(color_, name_, options_) {
 		super(color_, options_)
 		this._name = name_
@@ -26,9 +22,8 @@ export default class OCOValueEX extends TinyColor {
 		return this._name
 	}
 
-	toSublimeUI() {
+	toArrayIntRGBA() {
 		const alphaSuffix = this.alphaActive ? `, ${Math.round(this._a * 255)}` : ''
-
 		return `[${
 			Math.round(this._r)
 		}, ${
@@ -38,28 +33,27 @@ export default class OCOValueEX extends TinyColor {
 		}${alphaSuffix}]`
 	}
 
-	rgbaToHexRGBA(allowRGBA) {
-		const hexAA = this.alphaActive ?
-			pad(Math.round(this._a * 255).toString(16), 2, '0').toUpperCase() : ''
-
-		const hexA = this.alphaActive &&
-			allowRGBA && hexAA[0] === hexAA[1] ? hexAA[0] : hexAA
-
-		const hexRGB = this.toHex(allowRGBA && hexA.length === 1).toUpperCase()
-
-		return `#${hexRGB}${hexA}`
+	toArrayRGBA() {
+		const alphaSuffix = this.alphaActive ? `, ${this._a}` : ''
+		return `[${
+			this._r / 255.0
+		}, ${
+			this._g / 255.0
+		}, ${
+			this._b / 255.0
+		}${alphaSuffix}]`
 	}
 
 	toString(format) {
 		format = format || this._format
 		let output
 		switch (format) {
-			case 'sublRGBA':
-				output = this.toSublimeUI()
+			case 'toArrayIntRGBA':
+				output = this.toArrayIntRGBA()
 				break
 
-			case 'hexRGBA':
-				output = this.rgbaToHexRGBA(true)
+			case 'toArrayRGBA':
+				output = this.toArrayRGBA()
 				break
 
 			default:
@@ -68,40 +62,7 @@ export default class OCOValueEX extends TinyColor {
 		return output
 	}
 
-	static fromJSON(raw_) {
-		return new OCOValueEX(
-			new TinyColor(
-				chroma.gl([
-					raw_.red,
-					raw_.green,
-					raw_.blue,
-					raw_.alpha
-				]).css()),
-			raw_.name
-		)
-	}
-
-	static isJSON(is_) {
-		const tests = {
-			palette: {
-				name: (typeof is_.name === 'string') && is_.name,
-				colors: (Array.isArray(is_.colors)) && is_.colors
-			},
-			rgba: {
-				name: typeof is_.name === 'string' && is_.name,
-				red: (is_.red >= 0.0 && is_.red <= 1.0) && is_.red,
-				green: (is_.green >= 0.0 && is_.green <= 1.0) && is_.green,
-				blue: (is_.blue >= 0.0 && is_.blue <= 1.0) && is_.blue,
-				alpha: (is_.alpha >= 0.0 && is_.alpha <= 1.0) && is_.alpha
-			}
-		}
-		return {
-			palette: isEqual(is_, tests.palette),
-			rgba: isEqual(is_, tests.rgba)
-		}
-	}
-
-	static generatePalette(name_, colorArray_) {
+	static generateOCO(name_, colorArray_) {
 		return new oco.Entry(
 			name_,
 			colorArray_.map(color_ => new oco.Entry(
@@ -113,3 +74,7 @@ export default class OCOValueEX extends TinyColor {
 		)
 	}
 }
+
+export {fromPrecise, fromBytes} from './lib/rgba'
+export {fromCMYK} from './lib/cmyk'
+export {fromLab} from './lib/lab'

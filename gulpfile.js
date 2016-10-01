@@ -25,7 +25,7 @@ gulp.task('clean', cordial.shell({
 
 // Tests
 gulp.task('ava', cordial.test().ava(['test/*.js']))
-gulp.task('xo', cordial.test().xo(['src/lib/*.js']))
+gulp.task('xo', cordial.test().xo(['src/**.js']))
 gulp.task('test', gulp.parallel('xo', 'ava'))
 
 // Default
