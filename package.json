@@ -1,6 +1,6 @@
 {
   "name": "@thebespokepixel/oco-colorvalue-ex",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "scripts": {
@@ -38,11 +38,13 @@
   "dependencies": {
     "@thebespokepixel/es-tinycolor": "^0.2.0",
     "chroma-js": "^1.1.1",
+    "color-convert": "^1.5.0",
     "opencolor": "^0.2.0"
   },
   "devDependencies": {
     "@thebespokepixel/cordial": "^0.16.2",
     "ava": "^0.16.0",
+    "babel-plugin-external-helpers": "^6.8.0",
     "codeclimate-test-reporter": "^0.3.3",
     "greenkeeper-postpublish": "^1.0.1",
     "gulp": "github:gulpjs/gulp#4.0",

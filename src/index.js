@@ -7,6 +7,8 @@
 
 import oco from 'opencolor'
 import {TinyColor} from '@thebespokepixel/es-tinycolor'
+import './lib/cmyk'
+import './lib/lab'
 
 export class OCOValueEX extends TinyColor {
 	constructor(color_, name_, options_) {
@@ -76,5 +78,3 @@ export class OCOValueEX extends TinyColor {
 }
 
 export {fromPrecise, fromBytes} from './lib/rgba'
-export {fromCMYK} from './lib/cmyk'
-export {fromLab} from './lib/lab'
