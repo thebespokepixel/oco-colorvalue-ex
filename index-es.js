@@ -1,6 +1,100 @@
 import oco from 'opencolor';
 import { TinyColor } from '@thebespokepixel/es-tinycolor';
 import chroma from 'chroma-js';
+import convert from 'color-convert';
+
+const api = TinyColor.registerFormat('cmyk');
+
+function isValidCMYK(input, min, max) {
+	const test = {
+		cyan: input.cyan >= min && input.cyan <= max,
+		magenta: input.magenta >= min && input.magenta <= max,
+		yellow: input.yellow >= min && input.yellow <= max,
+		black: input.black >= min && input.black <= max
+	};
+	return test.cyan && test.magenta && test.yellow && test.black;
+}
+
+function cmykToRgba(raw) {
+	const base = chroma.cmyk(raw.cyan, raw.magenta, raw.yellow, raw.black);
+	base.alpha(raw.alpha || 1);
+	return {
+		r: base.get('rgb.r'),
+		g: base.get('rgb.g'),
+		b: base.get('rgb.b'),
+		a: base.alpha()
+	};
+}
+
+function rgbaToCmyk(rgba) {
+	const [c, m, y, k] = convert.rgb.cmyk.raw(chroma.gl(rgba).rgb());
+	const a = rgba.a || 1;
+	return { c, m, y, k, a };
+}
+
+function cmykToString(cmyka) {
+	let { c, m, y, k, a } = cmyka;
+	c = Math.round(c);
+	m = Math.round(m);
+	y = Math.round(y);
+	k = Math.round(k);
+
+	return a === 1 ? `cmyk(${ c }%, ${ m }%, ${ y }%, ${ k }%)` : `cmyka(${ c }%, ${ m }%, ${ y }%, ${ k }%, ${ a })`;
+}
+
+api.shouldHandleInput = input => typeof input === 'object' && isValidCMYK(input, 0.0, 1.0);
+api.toRgb = input => cmykToRgba(input);
+api.toRaw = rgba => rgbaToCmyk(rgba);
+api.toString = rgba => cmykToString(rgbaToCmyk(rgba));
+
+const api$1 = TinyColor.registerFormat('lab');
+
+function round(number, precision) {
+	const factor = Math.pow(10, precision);
+	const tempNumber = number * factor;
+	const roundedTempNumber = Math.round(tempNumber);
+	return roundedTempNumber / factor;
+}
+
+function isValidLab(input) {
+	const test = {
+		L: input.L >= 0.0 && input.L <= 100.0,
+		a: input.a >= -127.0 && input.a <= 127.0,
+		b: input.b >= -127.0 && input.b <= 127.0
+	};
+	return test.L && test.a && test.b;
+}
+
+function labToRgba(raw) {
+	const base = chroma.lab(raw.L, raw.a, raw.b);
+	base.alpha(raw.alpha || 1);
+	return {
+		r: base.get('rgb.r'),
+		g: base.get('rgb.g'),
+		b: base.get('rgb.b'),
+		a: base.alpha()
+	};
+}
+
+function rgbaToLab(rgba) {
+	const [L, a, b] = chroma.gl(rgba).lab();
+	const alpha = rgba.a || 1;
+	return { L, a, b, alpha };
+}
+
+function labToString(laba) {
+	let { L, a, b, alpha } = laba;
+	L = round(L, 2);
+	a = round(a, 2);
+	b = round(b, 2);
+
+	return alpha === 1 ? `lab(${ L }%, ${ a }, ${ b })` : `laba(${ L }%, ${ a }, ${ b }, ${ alpha })`;
+}
+
+api$1.shouldHandleInput = input => typeof input === 'object' && isValidLab(input);
+api$1.toRgb = input => labToRgba(input);
+api$1.toRaw = rgba => rgbaToLab(rgba);
+api$1.toString = rgba => labToString(rgbaToLab(rgba));
 
 function fromPrecise(raw) {
 	const base = chroma.gl([raw.red, raw.green, raw.blue]);
@@ -9,16 +103,6 @@ function fromPrecise(raw) {
 
 function fromBytes(raw) {
 	return new OCOValueEX(new TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
-}
-
-function fromCMYK(raw) {
-	const base = chroma.cmyk(raw.cyan, raw.magenta, raw.yellow, raw.black);
-	return new OCOValueEX(new TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
-}
-
-function fromLab(raw) {
-	const base = chroma.lab(raw.L, raw.a, raw.b);
-	return new OCOValueEX(new TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
 }
 
 class OCOValueEX extends TinyColor {
@@ -68,4 +152,4 @@ class OCOValueEX extends TinyColor {
 	}
 }
 
-export { OCOValueEX, fromPrecise, fromBytes, fromCMYK, fromLab };
+export { OCOValueEX, fromPrecise, fromBytes };

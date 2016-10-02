@@ -7,11 +7,17 @@ const cordial = require('@thebespokepixel/cordial')()
 
 // transpilation/formatting
 gulp.task('bundle', cordial.macro({
+	babel: {
+		plugins: ['external-helpers']
+	},
 	source: 'src/index.js'
 }).basic())
 
 gulp.task('master', cordial.macro({
 	master: true,
+	babel: {
+		plugins: ['external-helpers']
+	},
 	source: 'src/index.js'
 }).basic())
 

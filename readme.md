@@ -19,7 +19,7 @@ Enables a much wider range of color spaces, conversion, and esoteric customisati
 
 - Handling a wider range or color notations, such as those found in JSON and native Objects and Arrays.
 - Uses my port of Tinycolor, es-tinycolor for tighter control of minimisation and tree-shaking.
-- Add supports for L*ab, CMYK, Lch, HWB, Color temperatures using color-convert suport.
+- Add supports for L*ab, CMYK, RGBA Bytes
 - Generate aesthetic palettes, or describe dynamic scaling along curves from oco files with Chroma support.
 
 [gitter-badge]: https://img.shields.io/gitter/room/MarkGriffiths/help.svg?style=flat
