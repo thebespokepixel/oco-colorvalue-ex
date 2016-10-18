@@ -42,7 +42,7 @@
     "opencolor": "^0.2.0"
   },
   "devDependencies": {
-    "@thebespokepixel/cordial": "^0.16.2",
+    "@thebespokepixel/cordial": "^0.17.8",
     "ava": "^0.16.0",
     "babel-plugin-external-helpers": "^6.8.0",
     "codeclimate-test-reporter": "^0.3.3",
