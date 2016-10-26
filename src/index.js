@@ -1,9 +1,8 @@
-/*
- *  Open Color
- *  ColorValue Extensions: Conversion, Color Space and Format Utilities
- *  ────────────────────────────────────────────────────────────────────────────
- *  ©2016 Mark Griffiths @ The Bespoke Pixel (MIT licensed)
- */
+/* ───────────╮
+ │ Open Color │ ColorValue Extensions: Conversion and Color Format Utilities
+ ╰────────────┴──────────────────────────────────────────────────────────────── */
+// ©2016 Mark Griffiths @ The Bespoke Pixel (MIT licensed)
+/* eslint import/no-unassigned-import:0 */
 
 import oco from 'opencolor'
 import {TinyColor} from '@thebespokepixel/es-tinycolor'

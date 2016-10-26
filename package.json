@@ -1,16 +1,17 @@
 {
   "name": "@thebespokepixel/oco-colorvalue-ex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "scripts": {
     "test": "xo && snyk test && nyc ava",
-    "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --document-exported --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/lib/index.js",
-    "doc-build": "documentation build --format html --output docs --theme node_modules/documentation-theme-bespoke --document-exported --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/lib/index.js",
+    "generate-test-fixtures": "scripts/generate-test-fixtures",
+    "generate-test-widths": "scripts/generate-test-widths",
+    "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
+    "doc-build": "documentation build --format html --output docs --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
+    "readme": "compile-readme -u src/docs/example.md src/docs/readme.md > readme.md",
     "code-climate": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "coverage": "nyc ava && nyc report --reporter=lcov --report-dir test/coverage; open test/coverage/lcov-report/index.html",
-    "generate-test-fixtures": "scripts/generate-test-fixtures",
-    "postpublish": "greenkeeper-postpublish",
     "clean": "gulp clean"
   },
   "repository": {
@@ -42,15 +43,17 @@
     "opencolor": "^0.2.0"
   },
   "devDependencies": {
-    "@thebespokepixel/cordial": "^0.16.2",
+    "@thebespokepixel/cordial": "^0.17.10",
     "ava": "^0.16.0",
     "babel-plugin-external-helpers": "^6.8.0",
-    "codeclimate-test-reporter": "^0.3.3",
+    "documentation": "^4.0.0-beta11",
+    "documentation-theme-bespoke": "^0.3.0",
+    "codeclimate-test-reporter": "^0.4.0",
     "greenkeeper-postpublish": "^1.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
-    "nyc": "^8.3.0",
+    "nyc": "^8.3.2",
     "snyk": "^1.19.1",
-    "xo": "^0.16.0"
+    "xo": "^0.17.0"
   },
   "xo": {
     "semicolon": false,
@@ -61,9 +64,62 @@
       "docs/**"
     ]
   },
-  "buildNumber": 0,
+  "badges": {
+    "github": "MarkGriffiths",
+    "npm": "thebespokepixel",
+    "name": "truwrap",
+    "providers": {
+      "status": {
+        "text": "beta",
+        "color": "blue"
+      },
+      "aux1": {
+        "title": "github",
+        "text": "source",
+        "color": "4E73B6",
+        "link": "https://github.com/MarkGriffiths/truwrap"
+      }
+    },
+    "readme": {
+      "Status": [
+        [
+          "status",
+          "npm",
+          "travis",
+          "david"
+        ],
+        [
+          "code-climate",
+          "code-climate-coverage",
+          "snyk"
+        ]
+      ],
+      "Developer": [
+        "david-dev",
+        "rollup"
+      ],
+      "Help": [
+        "inch",
+        "gitter"
+      ]
+    },
+    "docs": [
+      [
+        "aux1",
+        "travis"
+      ],
+      [
+        "code-climate",
+        "code-climate-coverage"
+      ],
+      [
+        "david"
+      ]
+    ]
+  },
+  "buildNumber": 1,
   "engines": {
-    "node": ">=4.0 <7.0"
+    "node": ">=4.0 <9.0"
   },
   "jsnext:main": "index-es.js"
 }
