@@ -122,6 +122,83 @@ var asyncGenerator = function () {
   };
 }();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var get = function get(object, property, receiver) {
+  if (object === null) object = Function.prototype;
+  var desc = Object.getOwnPropertyDescriptor(object, property);
+
+  if (desc === undefined) {
+    var parent = Object.getPrototypeOf(object);
+
+    if (parent === null) {
+      return undefined;
+    } else {
+      return get(parent, property, receiver);
+    }
+  } else if ("value" in desc) {
+    return desc.value;
+  } else {
+    var getter = desc.get;
+
+    if (getter === undefined) {
+      return undefined;
+    }
+
+    return getter.call(receiver);
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var set = function set(object, property, value, receiver) {
+  var desc = Object.getOwnPropertyDescriptor(object, property);
+
+  if (desc === undefined) {
+    var parent = Object.getPrototypeOf(object);
+
+    if (parent !== null) {
+      set(parent, property, value, receiver);
+    }
+  } else if ("value" in desc && desc.writable) {
+    desc.value = value;
+  } else {
+    var setter = desc.set;
+
+    if (setter !== undefined) {
+      setter.call(receiver, value);
+    }
+  }
+
+  return value;
+};
+
 var slicedToArray = function () {
   function sliceIterator(arr, i) {
     var _arr = [];
@@ -184,25 +261,24 @@ function cmykToRgba(raw) {
 }
 
 function rgbaToCmyk(rgba) {
-	var _convert$rgb$cmyk$raw = convert.rgb.cmyk.raw(chroma.gl(rgba).rgb());
+	var _convert$rgb$cmyk$raw = convert.rgb.cmyk.raw(chroma.gl(rgba).rgb()),
+	    _convert$rgb$cmyk$raw2 = slicedToArray(_convert$rgb$cmyk$raw, 4);
 
-	var _convert$rgb$cmyk$raw2 = slicedToArray(_convert$rgb$cmyk$raw, 4);
-
-	const c = _convert$rgb$cmyk$raw2[0];
-	const m = _convert$rgb$cmyk$raw2[1];
-	const y = _convert$rgb$cmyk$raw2[2];
-	const k = _convert$rgb$cmyk$raw2[3];
+	const c = _convert$rgb$cmyk$raw2[0],
+	      m = _convert$rgb$cmyk$raw2[1],
+	      y = _convert$rgb$cmyk$raw2[2],
+	      k = _convert$rgb$cmyk$raw2[3];
 
 	const a = rgba.a || 1;
 	return { c, m, y, k, a };
 }
 
 function cmykToString(cmyka) {
-	let c = cmyka.c;
-	let m = cmyka.m;
-	let y = cmyka.y;
-	let k = cmyka.k;
-	let a = cmyka.a;
+	let c = cmyka.c,
+	    m = cmyka.m,
+	    y = cmyka.y,
+	    k = cmyka.k,
+	    a = cmyka.a;
 
 	c = Math.round(c);
 	m = Math.round(m);
@@ -247,23 +323,22 @@ function labToRgba(raw) {
 }
 
 function rgbaToLab(rgba) {
-	var _chroma$gl$lab = chroma.gl(rgba).lab();
+	var _chroma$gl$lab = chroma.gl(rgba).lab(),
+	    _chroma$gl$lab2 = slicedToArray(_chroma$gl$lab, 3);
 
-	var _chroma$gl$lab2 = slicedToArray(_chroma$gl$lab, 3);
-
-	const L = _chroma$gl$lab2[0];
-	const a = _chroma$gl$lab2[1];
-	const b = _chroma$gl$lab2[2];
+	const L = _chroma$gl$lab2[0],
+	      a = _chroma$gl$lab2[1],
+	      b = _chroma$gl$lab2[2];
 
 	const alpha = rgba.a || 1;
 	return { L, a, b, alpha };
 }
 
 function labToString(laba) {
-	let L = laba.L;
-	let a = laba.a;
-	let b = laba.b;
-	let alpha = laba.alpha;
+	let L = laba.L,
+	    a = laba.a,
+	    b = laba.b,
+	    alpha = laba.alpha;
 
 	L = round(L, 2);
 	a = round(a, 2);
@@ -277,12 +352,12 @@ api$1.toRgb = input => labToRgba(input);
 api$1.toRaw = rgba => rgbaToLab(rgba);
 api$1.toString = rgba => labToString(rgbaToLab(rgba));
 
-function fromPrecise(raw) {
+function fromPrecise$$1(raw) {
 	const base = chroma.gl([raw.red, raw.green, raw.blue]);
 	return new OCOValueEX(new _thebespokepixel_esTinycolor.TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
 }
 
-function fromBytes(raw) {
+function fromBytes$$1(raw) {
 	return new OCOValueEX(new _thebespokepixel_esTinycolor.TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
 }
 
@@ -334,5 +409,5 @@ class OCOValueEX extends _thebespokepixel_esTinycolor.TinyColor {
 }
 
 exports.OCOValueEX = OCOValueEX;
-exports.fromPrecise = fromPrecise;
-exports.fromBytes = fromBytes;
+exports.fromPrecise = fromPrecise$$1;
+exports.fromBytes = fromBytes$$1;

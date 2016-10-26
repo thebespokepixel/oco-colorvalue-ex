@@ -96,12 +96,12 @@ api$1.toRgb = input => labToRgba(input);
 api$1.toRaw = rgba => rgbaToLab(rgba);
 api$1.toString = rgba => labToString(rgbaToLab(rgba));
 
-function fromPrecise(raw) {
+function fromPrecise$$1(raw) {
 	const base = chroma.gl([raw.red, raw.green, raw.blue]);
 	return new OCOValueEX(new TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
 }
 
-function fromBytes(raw) {
+function fromBytes$$1(raw) {
 	return new OCOValueEX(new TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
 }
 
@@ -152,4 +152,4 @@ class OCOValueEX extends TinyColor {
 	}
 }
 
-export { OCOValueEX, fromPrecise, fromBytes };
+export { OCOValueEX, fromPrecise$$1 as fromPrecise, fromBytes$$1 as fromBytes };
