@@ -1,9 +1,8 @@
-/*
- *  Open Color
- *  RGBA Color utilities
- *  ────────────────────────────────────────────────────────────────────────────
- *  ©2016 Mark Griffiths @ The Bespoke Pixel (MIT licensed)
- */
+/* ───────────╮
+ │ Open Color │ RGBA Color utilities
+ ╰────────────┴──────────────────────────────────────────────────────────────── */
+// ©2016 Mark Griffiths @ The Bespoke Pixel (MIT licensed)
+
 import {TinyColor} from '@thebespokepixel/es-tinycolor'
 import chroma from 'chroma-js'
 import {OCOValueEX} from '..'
