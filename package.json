@@ -1,10 +1,10 @@
 {
   "name": "@thebespokepixel/oco-colorvalue-ex",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "scripts": {
-    "test": "xo && snyk test && nyc ava",
+    "test": "xo && nyc ava",
     "generate-test-fixtures": "scripts/generate-test-fixtures",
     "generate-test-widths": "scripts/generate-test-widths",
     "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
@@ -37,17 +37,17 @@
   },
   "homepage": "https://github.com/MarkGriffiths/oco-colorvalue-ex#readme",
   "dependencies": {
-    "@thebespokepixel/es-tinycolor": "^0.2.0",
+    "@thebespokepixel/es-tinycolor": "^0.2.4",
     "chroma-js": "^1.1.1",
     "color-convert": "^1.5.0",
     "opencolor": "^0.2.0"
   },
   "devDependencies": {
-    "@thebespokepixel/cordial": "^0.17.10",
+    "@thebespokepixel/cordial": "^0.17.11",
     "ava": "^0.16.0",
     "babel-plugin-external-helpers": "^6.8.0",
     "documentation": "^4.0.0-beta11",
-    "documentation-theme-bespoke": "^0.3.0",
+    "documentation-theme-bespoke": "^0.3.2",
     "codeclimate-test-reporter": "^0.4.0",
     "greenkeeper-postpublish": "^1.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
@@ -117,7 +117,7 @@
       ]
     ]
   },
-  "buildNumber": 1,
+  "buildNumber": 0,
   "engines": {
     "node": ">=4.0 <9.0"
   },
