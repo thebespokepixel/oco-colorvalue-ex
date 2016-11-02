@@ -31,9 +31,6 @@ gulp.task('readme', cordial.shell({
 	source: 'npm run readme'
 }).job())
 
-// Hooks
-gulp.task('start-release', gulp.series('reset', 'master'))
-
 // Clean
 gulp.task('clean', cordial.shell({
 	source: ['npm-debug.*', './.nyc_output', './test/coverage']
