@@ -128,8 +128,9 @@ const asyncGenerator = (function () {
 })()
 
 const get = function get(object, property, receiver) {
-	if (object === null)
-		{object = Function.prototype}
+	if (object === null)		{
+		object = Function.prototype
+	}
 	const desc = Object.getOwnPropertyDescriptor(object, property)
 
 	if (desc === undefined) {
@@ -186,17 +187,22 @@ const slicedToArray = (function () {
 			for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
 				_arr.push(_s.value)
 
-				if (i && _arr.length === i) {break}
+				if (i && _arr.length === i) {
+					break
+				}
 			}
 		} catch (err) {
 			_d = true
 			_e = err
 		} finally {
 			try {
-				if (!_n && _i.return) {_i.return()}
+				if (!_n && _i.return) {
+					_i.return()
+				}
 			} finally {
-				if (_d)
-					{throw _e}
+				if (_d)					{
+					throw _e
+				}
 			}
 		}
 
