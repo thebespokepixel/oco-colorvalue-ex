@@ -27,6 +27,6 @@ addons:
     packages:
       - g++-4.8
   code_climate:
-      repo_token: 0eefaf3c93994d7485e7f6bf05838bace92e18961c2541317ea4bf443457bf3f
+    repo_token: 0eefaf3c93994d7485e7f6bf05838bace92e18961c2541317ea4bf443457bf3f
 after_script:
   - "[ $TRAVIS_NODE_VERSION = stable ] && nyc report --reporter=text-lcov | codeclimate-test-reporter"
