@@ -18,7 +18,7 @@
     "url": "git+https://github.com/MarkGriffiths/oco-colorvalue-ex.git"
   },
   "files": [
-    "index-es.js",
+    "index.mjs",
     "index.js"
   ],
   "keywords": [
