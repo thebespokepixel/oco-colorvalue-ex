@@ -128,14 +128,6 @@ api$1.toRaw = rgba => rgbaToLab(rgba);
 
 api$1.toString = rgba => labToString(rgbaToLab(rgba));
 
-function fromPrecise$$1(raw) {
-  const base = chroma.gl([raw.red, raw.green, raw.blue]);
-  return new OCOValueEX(new esTinycolor.TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
-}
-function fromBytes$$1(raw) {
-  return new OCOValueEX(new esTinycolor.TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
-}
-
 class OCOValueEX extends esTinycolor.TinyColor {
   constructor(color_, name_, options_) {
     super(color_, options_);
@@ -186,6 +178,15 @@ class OCOValueEX extends esTinycolor.TinyColor {
 
 }
 
+function fromPrecise(raw) {
+  const base = chroma.gl([raw.red, raw.green, raw.blue]);
+  return new OCOValueEX(new esTinycolor.TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
+}
+function fromBytes(raw) {
+  return new OCOValueEX(new esTinycolor.TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
+}
+
+
 exports.OCOValueEX = OCOValueEX;
-exports.fromPrecise = fromPrecise$$1;
-exports.fromBytes = fromBytes$$1;
+exports.fromPrecise = fromPrecise;
+exports.fromBytes = fromBytes;
