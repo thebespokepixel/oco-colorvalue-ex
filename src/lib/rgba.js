@@ -5,7 +5,7 @@
 
 import {TinyColor} from '@thebespokepixel/es-tinycolor'
 import chroma from 'chroma-js'
-import {OCOValueEX} from '..'
+import {OCOValueEX} from './ocovalueex'
 
 export function fromPrecise(raw) {
 	const base = chroma.gl([

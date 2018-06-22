@@ -1,15 +1,9 @@
-'use strict';
+import { TinyColor } from '@thebespokepixel/es-tinycolor';
+import chroma from 'chroma-js';
+import convert from 'color-convert';
+import oco from 'opencolor';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var esTinycolor = require('@thebespokepixel/es-tinycolor');
-var chroma = _interopDefault(require('chroma-js'));
-var convert = _interopDefault(require('color-convert'));
-var oco = _interopDefault(require('opencolor'));
-
-const api = esTinycolor.TinyColor.registerFormat('cmyk');
+const api = TinyColor.registerFormat('cmyk');
 
 function isValidCMYK(input, min, max) {
   const test = {
@@ -67,7 +61,7 @@ api.toRaw = rgba => rgbaToCmyk(rgba);
 
 api.toString = rgba => cmykToString(rgbaToCmyk(rgba));
 
-const api$1 = esTinycolor.TinyColor.registerFormat('lab');
+const api$1 = TinyColor.registerFormat('lab');
 
 function round(number, precision) {
   const factor = Math.pow(10, precision);
@@ -128,7 +122,7 @@ api$1.toRaw = rgba => rgbaToLab(rgba);
 
 api$1.toString = rgba => labToString(rgbaToLab(rgba));
 
-class OCOValueEX extends esTinycolor.TinyColor {
+class OCOValueEX extends TinyColor {
   constructor(color_, name_, options_) {
     super(color_, options_);
     this._name = name_;
@@ -180,13 +174,11 @@ class OCOValueEX extends esTinycolor.TinyColor {
 
 function fromPrecise(raw) {
   const base = chroma.gl([raw.red, raw.green, raw.blue]);
-  return new OCOValueEX(new esTinycolor.TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
+  return new OCOValueEX(new TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
 }
 function fromBytes(raw) {
-  return new OCOValueEX(new esTinycolor.TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
+  return new OCOValueEX(new TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
 }
 
 
-exports.OCOValueEX = OCOValueEX;
-exports.fromPrecise = fromPrecise;
-exports.fromBytes = fromBytes;
+export { OCOValueEX, fromPrecise, fromBytes };
