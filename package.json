@@ -71,6 +71,7 @@
     "github": "MarkGriffiths",
     "npm": "thebespokepixel",
     "name": "truwrap",
+    "codeclimate": "4a7a9ec0581c0a40d969",
     "providers": {
       "status": {
         "text": "beta",

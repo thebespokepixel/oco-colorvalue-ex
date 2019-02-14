@@ -5,7 +5,7 @@
 ##### Status
 
 ![Status](https://img.shields.io/badge/status-beta-blue.svg?style=flat) [![npm](https://img.shields.io/npm/v/@thebespokepixel/oco-colorvalue-ex.svg?style=flat&logo=npm)](https://www.npmjs.com/package/@thebespokepixel/oco-colorvalue-ex "npm") [![Travis](https://img.shields.io/travis/MarkGriffiths/truwrap.svg?branch=master&style=flat&logo=travis)](https://travis-ci.org/MarkGriffiths/truwrap "Travis") [![David](https://img.shields.io/david/MarkGriffiths/truwrap.svg?branch=master&style=flat)](https://david-dm.org/MarkGriffiths/truwrap/master "David")  
- [![Code-climate](https://api.codeclimate.com/v1/badges/undefined/maintainability?style=flat)](https://codeclimate.com/github/MarkGriffiths/truwrap/maintainability "Code-climate") [![Coverage](https://api.codeclimate.com/v1/badges/undefined/test_coverage?style=flat)](https://codeclimate.com/github/MarkGriffiths/truwrap/test_coverage "Coverage") [![Snyk](https://snyk.io/test/github/MarkGriffiths/truwrap/badge.svg?style=flat)](https://snyk.io/test/github/MarkGriffiths/truwrap "Snyk")   
+ [![Code-climate](https://api.codeclimate.com/v1/badges/4a7a9ec0581c0a40d969/maintainability?style=flat)](https://codeclimate.com/github/MarkGriffiths/truwrap/maintainability "Code-climate") [![Coverage](https://api.codeclimate.com/v1/badges/4a7a9ec0581c0a40d969/test_coverage?style=flat)](https://codeclimate.com/github/MarkGriffiths/truwrap/test_coverage "Coverage") [![Snyk](https://snyk.io/test/github/MarkGriffiths/truwrap/badge.svg?style=flat)](https://snyk.io/test/github/MarkGriffiths/truwrap "Snyk")   
 
 ##### Developer
 
