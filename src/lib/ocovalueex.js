@@ -60,6 +60,7 @@ export class OCOValueEX extends TinyColor {
 			default:
 				output = super.toString(format)
 		}
+
 		return output
 	}
 

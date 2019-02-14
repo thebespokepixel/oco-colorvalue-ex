@@ -70,7 +70,7 @@ api.toString = rgba => cmykToString(rgbaToCmyk(rgba));
 const api$1 = esTinycolor.TinyColor.registerFormat('lab');
 
 function round(number, precision) {
-  const factor = Math.pow(10, precision);
+  const factor = 10 ** precision;
   const tempNumber = number * factor;
   const roundedTempNumber = Math.round(tempNumber);
   return roundedTempNumber / factor;
@@ -185,7 +185,6 @@ function fromPrecise(raw) {
 function fromBytes(raw) {
   return new OCOValueEX(new esTinycolor.TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
 }
-
 
 exports.OCOValueEX = OCOValueEX;
 exports.fromPrecise = fromPrecise;
