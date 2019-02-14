@@ -38,7 +38,7 @@
   "dependencies": {
     "@thebespokepixel/es-tinycolor": "^0.3.2",
     "chroma-js": "^2.0.2",
-    "color-convert": "^1.9.3",
+    "color-convert": "^2.0.0",
     "opencolor": "^0.2.0"
   },
   "devDependencies": {
