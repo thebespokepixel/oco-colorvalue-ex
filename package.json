@@ -47,7 +47,7 @@
     "acorn": "^6.1.0",
     "ava": "^1.2.1",
     "documentation": "^9.1.1",
-    "documentation-theme-bespoke": "^0.4.4",
+    "documentation-theme-bespoke": "^0.4.5",
     "gulp": "^4.0.0",
     "gulp-better-rollup": "^3.4.0",
     "gulp-rename": "^1.4.0",
@@ -81,7 +81,7 @@
         "title": "github",
         "text": "source",
         "color": "4E73B6",
-        "link": "https://github.com/MarkGriffiths/truwrap"
+        "link": "https://github.com/MarkGriffiths/oco-colorvalue-ex"
       }
     },
     "readme": {
