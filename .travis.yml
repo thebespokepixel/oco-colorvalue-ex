@@ -1,10 +1,10 @@
 ---
 branches:
   only:
-  - master
-  - develop
-  - /^greenkeeper/.*$/
-  - /^feature/.*$/
+    - master
+    - develop
+    - /^greenkeeper/.*$/
+    - /^feature/.*$/
 language: node_js
 node_js:
   - stable
