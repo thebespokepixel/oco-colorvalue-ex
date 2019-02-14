@@ -99,6 +99,7 @@
         ]
       ],
       "Developer": [
+        "greenkeeper",
         "david-dev",
         "rollup"
       ],
