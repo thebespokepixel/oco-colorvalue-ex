@@ -9,7 +9,7 @@ import chroma from 'chroma-js'
 const api = TinyColor.registerFormat('lab')
 
 function round(number, precision) {
-	const factor = Math.pow(10, precision)
+	const factor = 10 ** precision
 	const tempNumber = number * factor
 	const roundedTempNumber = Math.round(tempNumber)
 	return roundedTempNumber / factor
