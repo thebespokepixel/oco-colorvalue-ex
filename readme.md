@@ -4,7 +4,7 @@
 
 ##### Status
 
-![Status](https://img.shields.io/badge/status-beta-blue.svg?style=flat) [![npm](https://img.shields.io/npm/v/@thebespokepixel/oco-colorvalue-ex.svg?style=flat&logo=npm)](https://www.npmjs.com/package/@thebespokepixel/oco-colorvalue-ex "npm") [![Travis](https://img.shields.io/travis/MarkGriffiths/oco-colorvalue-ex.svg?branch=master&style=flat&logo=travis)](https://travis-ci.org/MarkGriffiths/oco-colorvalue-ex "Travis") [![David](https://img.shields.io/david/MarkGriffiths/oco-colorvalue-ex.svg?branch=master&style=flat)](https://david-dm.org/MarkGriffiths/oco-colorvalue-ex/master "David")  
+[![npm](https://img.shields.io/npm/v/@thebespokepixel/oco-colorvalue-ex.svg?style=flat&logo=npm)](https://www.npmjs.com/package/@thebespokepixel/oco-colorvalue-ex "npm") [![Travis](https://img.shields.io/travis/MarkGriffiths/oco-colorvalue-ex.svg?branch=master&style=flat&logo=travis)](https://travis-ci.org/MarkGriffiths/oco-colorvalue-ex "Travis") [![David](https://img.shields.io/david/MarkGriffiths/oco-colorvalue-ex.svg?branch=master&style=flat)](https://david-dm.org/MarkGriffiths/oco-colorvalue-ex/master "David")  
  [![Code-climate](https://api.codeclimate.com/v1/badges/4a7a9ec0581c0a40d969/maintainability?style=flat)](https://codeclimate.com/github/MarkGriffiths/oco-colorvalue-ex/maintainability "Code-climate") [![Coverage](https://api.codeclimate.com/v1/badges/4a7a9ec0581c0a40d969/test_coverage?style=flat)](https://codeclimate.com/github/MarkGriffiths/oco-colorvalue-ex/test_coverage "Coverage") [![Snyk](https://snyk.io/test/github/MarkGriffiths/oco-colorvalue-ex/badge.svg?style=flat)](https://snyk.io/test/github/MarkGriffiths/oco-colorvalue-ex "Snyk")   
 
 ##### Developer
@@ -26,6 +26,23 @@ Enables a much wider range of color spaces, conversion, and esoteric customisati
 -   Uses my port of Tinycolor, es-tinycolor for tighter control of minimisation and tree-shaking.
 -   Add supports for L\*ab, CMYK, RGBA Bytes
 -   Generate aesthetic palettes, or describe dynamic scaling along curves from oco files with Chroma support.
+
+```js
+import {OCOValueEX, fromPrecise, fromBytes} from '@thebespokepixel/oco-colorvalue-ex'
+import {render} from 'opencolor'
+
+const r = new OCOValueEX('red', 'Test Red')
+const g = new OCOValueEX('green', 'Test Green')
+const b = new OCOValueEX('blue', 'Test Blue')
+
+const ocoDocument = render(OCOValueEX.generateOCO('root', [r, g, b]))
+
+/*
+  Test Red: rgb(255, 0, 0)
+  Test Green: rgb(0, 128, 0)
+  Test Blue: rgb(0, 0, 255)\n
+ */
+```
 
 
 ## Documentation

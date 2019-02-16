@@ -1,13 +1,11 @@
 {
   "name": "@thebespokepixel/oco-colorvalue-ex",
-  "version": "0.3.5",
+  "version": "1.0.0",
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "module": "index.mjs",
   "scripts": {
     "test": "xo && nyc ava",
-    "generate-test-fixtures": "scripts/generate-test-fixtures",
-    "generate-test-widths": "scripts/generate-test-widths",
     "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --project-name $npm_package_name  --project-version $npm_package_version src/index.js",
     "doc-build": "documentation build --format html --output docs --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --project-name $npm_package_name  --project-version $npm_package_version src/index.js",
     "readme": "compile-readme -u src/docs/example.md src/docs/readme.md > readme.md",
@@ -36,23 +34,23 @@
   },
   "homepage": "https://github.com/MarkGriffiths/oco-colorvalue-ex#readme",
   "dependencies": {
-    "@thebespokepixel/es-tinycolor": "^0.3.2",
+    "@thebespokepixel/es-tinycolor": "^1.0.2",
     "chroma-js": "^2.0.2",
     "color-convert": "^2.0.0",
     "opencolor": "^0.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "acorn": "^6.1.0",
     "ava": "^1.2.1",
     "documentation": "^9.1.1",
-    "documentation-theme-bespoke": "^0.4.8",
+    "documentation-theme-bespoke": "^0.4.10",
     "gulp": "^4.0.0",
     "gulp-better-rollup": "^3.4.0",
     "gulp-rename": "^1.4.0",
     "gulp-strip-comments": "^2.5.2",
-    "nyc": "^13.2.0",
+    "nyc": "^13.3.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
@@ -73,10 +71,6 @@
     "name": "oco-colorvalue-ex",
     "codeclimate": "4a7a9ec0581c0a40d969",
     "providers": {
-      "status": {
-        "text": "beta",
-        "color": "blue"
-      },
       "aux1": {
         "title": "github",
         "text": "source",
@@ -87,7 +81,6 @@
     "readme": {
       "Status": [
         [
-          "status",
           "npm",
           "travis",
           "david"
