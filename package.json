@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/MarkGriffiths/oco-colorvalue-ex#readme",
   "dependencies": {
-    "@thebespokepixel/es-tinycolor": "^0.3.2",
+    "@thebespokepixel/es-tinycolor": "^1.0.0",
     "chroma-js": "^2.0.2",
     "color-convert": "^2.0.0",
     "opencolor": "^0.2.0"
