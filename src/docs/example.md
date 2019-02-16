@@ -10,7 +10,17 @@ Enables a much wider range of color spaces, conversion, and esoteric customisati
 
 ```js
 import {OCOValueEX, fromPrecise, fromBytes} from '@thebespokepixel/oco-colorvalue-ex'
-import oco from 'opencolor'
+import {render} from 'opencolor'
 
-const ocoDocument = 
+const r = new OCOValueEX('red', 'Test Red')
+const g = new OCOValueEX('green', 'Test Green')
+const b = new OCOValueEX('blue', 'Test Blue')
+
+const ocoDocument = render(OCOValueEX.generateOCO('root', [r, g, b]))
+
+/*
+  Test Red: rgb(255, 0, 0)
+  Test Green: rgb(0, 128, 0)
+  Test Blue: rgb(0, 0, 255)\n
+ */
 ````
