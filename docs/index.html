@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>@thebespokepixel/oco-colorvalue-ex 0.3.5 | Documentation</title>
+  <title>@thebespokepixel/oco-colorvalue-ex 1.0.0 | Documentation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="assets/css/ace.min.css" rel="stylesheet">
   <link href="assets/fonts/TypoPRO-Hack/TypoPRO-Hack.css" type="text/css" rel="stylesheet" />
@@ -15,7 +15,7 @@
     <div id='split-left' class='overflow-auto fs0 height-viewport-100 sidebar'>
       <div class='py1 px2'>
         <h3 class="m0 no-anchor">@thebespokepixel/oco-colorvalue-ex</h3>
-        <div class="mb1"><code>0.3.5</code></div>
+        <div class="mb1"><code>1.0.0</code></div>
         <input
           placeholder="Filter"
           id="filter-input"
@@ -79,6 +79,20 @@
 <li>Add supports for L*ab, CMYK, RGBA Bytes</li>
 <li>Generate aesthetic palettes, or describe dynamic scaling along curves from oco files with Chroma support.</li>
 </ul>
+<pre class='hljs'><span class="hljs-keyword">import</span> {OCOValueEX, fromPrecise, fromBytes} <span class="hljs-keyword">from</span> <span class="hljs-string">'@thebespokepixel/oco-colorvalue-ex'</span>
+<span class="hljs-keyword">import</span> {render} <span class="hljs-keyword">from</span> <span class="hljs-string">'opencolor'</span>
+
+<span class="hljs-keyword">const</span> r = <span class="hljs-keyword">new</span> OCOValueEX(<span class="hljs-string">'red'</span>, <span class="hljs-string">'Test Red'</span>)
+<span class="hljs-keyword">const</span> g = <span class="hljs-keyword">new</span> OCOValueEX(<span class="hljs-string">'green'</span>, <span class="hljs-string">'Test Green'</span>)
+<span class="hljs-keyword">const</span> b = <span class="hljs-keyword">new</span> OCOValueEX(<span class="hljs-string">'blue'</span>, <span class="hljs-string">'Test Blue'</span>)
+
+<span class="hljs-keyword">const</span> ocoDocument = render(OCOValueEX.generateOCO(<span class="hljs-string">'root'</span>, [r, g, b]))
+
+<span class="hljs-comment">/*
+  Test Red: rgb(255, 0, 0)
+  Test Green: rgb(0, 128, 0)
+  Test Blue: rgb(0, 0, 255)\n
+ */</span></pre>
 
 	
 </section>
