@@ -6,3 +6,11 @@ Enables a much wider range of color spaces, conversion, and esoteric customisati
 - Uses my port of Tinycolor, es-tinycolor for tighter control of minimisation and tree-shaking.
 - Add supports for L*ab, CMYK, RGBA Bytes
 - Generate aesthetic palettes, or describe dynamic scaling along curves from oco files with Chroma support.
+
+
+```js
+import {OCOValueEX, fromPrecise, fromBytes} from '@thebespokepixel/oco-colorvalue-ex'
+import oco from 'opencolor'
+
+const ocoDocument = 
+````
