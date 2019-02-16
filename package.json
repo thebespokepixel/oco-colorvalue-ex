@@ -71,10 +71,6 @@
     "name": "oco-colorvalue-ex",
     "codeclimate": "4a7a9ec0581c0a40d969",
     "providers": {
-      "status": {
-        "text": "beta",
-        "color": "blue"
-      },
       "aux1": {
         "title": "github",
         "text": "source",
@@ -85,7 +81,6 @@
     "readme": {
       "Status": [
         [
-          "status",
           "npm",
           "travis",
           "david"
