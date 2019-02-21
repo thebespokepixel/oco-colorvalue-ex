@@ -1,6 +1,6 @@
 {
   "name": "@thebespokepixel/oco-colorvalue-ex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "module": "index.mjs",
@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/MarkGriffiths/oco-colorvalue-ex#readme",
   "dependencies": {
-    "@thebespokepixel/es-tinycolor": "^1.0.2",
-    "chroma-js": "^2.0.2",
+    "@thebespokepixel/es-tinycolor": "^1.0.3",
+    "chroma-js": "^2.0.3",
     "color-convert": "^2.0.0",
     "opencolor": "^0.2.0"
   },
@@ -45,7 +45,7 @@
     "acorn": "^6.1.0",
     "ava": "^1.2.1",
     "documentation": "^9.1.1",
-    "documentation-theme-bespoke": "^0.4.10",
+    "documentation-theme-bespoke": "^0.4.11",
     "gulp": "^4.0.0",
     "gulp-better-rollup": "^3.4.0",
     "gulp-rename": "^1.4.0",
