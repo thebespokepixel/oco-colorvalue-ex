@@ -5,7 +5,7 @@
 ##### Status
 
 [![npm](https://img.shields.io/npm/v/@thebespokepixel/oco-colorvalue-ex.svg?style=flat&logo=npm)](https://www.npmjs.com/package/@thebespokepixel/oco-colorvalue-ex "npm") [![Travis](https://img.shields.io/travis/MarkGriffiths/oco-colorvalue-ex.svg?branch=master&style=flat&logo=travis)](https://travis-ci.org/MarkGriffiths/oco-colorvalue-ex "Travis") [![David](https://img.shields.io/david/MarkGriffiths/oco-colorvalue-ex.svg?branch=master&style=flat)](https://david-dm.org/MarkGriffiths/oco-colorvalue-ex/master "David")  
- [![Code-climate](https://api.codeclimate.com/v1/badges/4a7a9ec0581c0a40d969/maintainability?style=flat)](https://codeclimate.com/github/MarkGriffiths/oco-colorvalue-ex/maintainability "Code-climate") [![Coverage](https://api.codeclimate.com/v1/badges/4a7a9ec0581c0a40d969/test_coverage?style=flat)](https://codeclimate.com/github/MarkGriffiths/oco-colorvalue-ex/test_coverage "Coverage") [![Snyk](https://snyk.io/test/github/MarkGriffiths/oco-colorvalue-ex/badge.svg?style=flat)](https://snyk.io/test/github/MarkGriffiths/oco-colorvalue-ex "Snyk")   
+ [![Code-climate](https://api.codeclimate.com/v1/badges/4a7a9ec0581c0a40d969/maintainability?style=flat)](https://codeclimate.com/github/MarkGriffiths/oco-colorvalue-ex/maintainability "Code-climate") [![Coverage](https://api.codeclimate.com/v1/badges/4a7a9ec0581c0a40d969/test_coverage?style=flat)](https://codeclimate.com/github/MarkGriffiths/oco-colorvalue-ex/test_coverage "Coverage") [![Snyk](https://img.shields.io/snyk/vulnerabilities/github/MarkGriffiths/oco-colorvalue-ex.svg?style=flat&logo=npm)](https://snyk.io/test/github/MarkGriffiths/oco-colorvalue-ex "Snyk")   
 
 ##### Developer
 
