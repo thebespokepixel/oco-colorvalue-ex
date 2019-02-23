@@ -1,6 +1,6 @@
 {
   "name": "@thebespokepixel/oco-colorvalue-ex",
-  "version": "3.0.2",
+  "version": "1.0.1",
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "module": "index.mjs",
@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/MarkGriffiths/oco-colorvalue-ex#readme",
   "dependencies": {
-    "@thebespokepixel/es-tinycolor": "^1.0.4",
+    "@thebespokepixel/es-tinycolor": "^1.0.3",
     "chroma-js": "^2.0.3",
     "color-convert": "^2.0.0",
     "opencolor": "^0.2.0"
@@ -42,16 +42,18 @@
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
+    "acorn": "^6.1.0",
     "ava": "^1.2.1",
-    "documentation-theme-bespoke": "^0.5.2",
+    "documentation": "^9.1.1",
+    "documentation-theme-bespoke": "^0.4.11",
     "gulp": "^4.0.0",
     "gulp-better-rollup": "^3.4.0",
     "gulp-rename": "^1.4.0",
     "gulp-strip-comments": "^2.5.2",
     "nyc": "^13.3.0",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^9.2.1",
-    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
     "xo": "^0.24.0"
   },
   "xo": {
