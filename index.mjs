@@ -1,7 +1,7 @@
+import oco from 'opencolor';
 import { TinyColor } from '@thebespokepixel/es-tinycolor';
 import chroma from 'chroma-js';
 import convert from 'color-convert';
-import oco from 'opencolor';
 
 const api = TinyColor.registerFormat('cmyk');
 
@@ -180,4 +180,4 @@ function fromBytes(raw) {
   return new OCOValueEX(new TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
 }
 
-export { OCOValueEX, fromPrecise, fromBytes };
+export { OCOValueEX, fromBytes, fromPrecise };
