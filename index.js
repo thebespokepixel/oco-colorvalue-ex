@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var oco = _interopDefault(require('opencolor'));
 var esTinycolor = require('@thebespokepixel/es-tinycolor');
 var chroma = _interopDefault(require('chroma-js'));
 var convert = _interopDefault(require('color-convert'));
-var oco = _interopDefault(require('opencolor'));
 
 const api = esTinycolor.TinyColor.registerFormat('cmyk');
 
@@ -187,5 +187,5 @@ function fromBytes(raw) {
 }
 
 exports.OCOValueEX = OCOValueEX;
-exports.fromPrecise = fromPrecise;
 exports.fromBytes = fromBytes;
+exports.fromPrecise = fromPrecise;
