@@ -53,7 +53,7 @@ function cmykToString(cmyka) {
 		`cmyka(${c}%, ${m}%, ${y}%, ${k}%, ${a})`
 }
 
-api.shouldHandleInput = input => typeof input === 'object' && isValidCMYK(input, 0.0, 1.0)
+api.shouldHandleInput = input => typeof input === 'object' && isValidCMYK(input, 0, 1)
 api.toRgb = input => cmykToRgba(input)
 api.toRaw = rgba => rgbaToCmyk(rgba)
 api.toString = rgba => cmykToString(rgbaToCmyk(rgba))

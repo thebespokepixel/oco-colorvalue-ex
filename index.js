@@ -59,7 +59,7 @@ function cmykToString(cmyka) {
   return a === 1 ? `cmyk(${c}%, ${m}%, ${y}%, ${k}%)` : `cmyka(${c}%, ${m}%, ${y}%, ${k}%, ${a})`;
 }
 
-api.shouldHandleInput = input => typeof input === 'object' && isValidCMYK(input, 0.0, 1.0);
+api.shouldHandleInput = input => typeof input === 'object' && isValidCMYK(input, 0, 1);
 
 api.toRgb = input => cmykToRgba(input);
 
@@ -78,9 +78,9 @@ function round(number, precision) {
 
 function isValidLab(input) {
   const test = {
-    L: input.L >= 0.0 && input.L <= 100.0,
-    a: input.a >= -127.0 && input.a <= 127.0,
-    b: input.b >= -127.0 && input.b <= 127.0
+    L: input.L >= 0 && input.L <= 100,
+    a: input.a >= -127 && input.a <= 127,
+    b: input.b >= -127 && input.b <= 127
   };
   return test.L && test.a && test.b;
 }
@@ -149,7 +149,7 @@ class OCOValueEX extends esTinycolor.TinyColor {
 
   toArrayRGBA() {
     const alphaSuffix = this.alphaActive ? `, ${this._a}` : '';
-    return `[${this._r / 255.0}, ${this._g / 255.0}, ${this._b / 255.0}${alphaSuffix}]`;
+    return `[${this._r / 255}, ${this._g / 255}, ${this._b / 255}${alphaSuffix}]`;
   }
 
   toString(format) {
@@ -183,7 +183,7 @@ function fromPrecise(raw) {
   return new OCOValueEX(new esTinycolor.TinyColor(raw.alpha ? base.alpha(raw.alpha).css() : base.css()), raw.name);
 }
 function fromBytes(raw) {
-  return new OCOValueEX(new esTinycolor.TinyColor(chroma.gl([raw.red / 255.0, raw.green / 255.0, raw.blue / 255.0, raw.alpha / 255.0]).css()), raw.name);
+  return new OCOValueEX(new esTinycolor.TinyColor(chroma.gl([raw.red / 255, raw.green / 255, raw.blue / 255, raw.alpha / 255]).css()), raw.name);
 }
 
 exports.OCOValueEX = OCOValueEX;

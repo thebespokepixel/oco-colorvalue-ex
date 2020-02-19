@@ -24,10 +24,10 @@ export function fromBytes(raw) {
 	return new OCOValueEX(
 		new TinyColor(
 			chroma.gl([
-				raw.red / 255.0,
-				raw.green / 255.0,
-				raw.blue / 255.0,
-				raw.alpha / 255.0
+				raw.red / 255,
+				raw.green / 255,
+				raw.blue / 255,
+				raw.alpha / 255
 			]).css()),
 		raw.name
 	)
