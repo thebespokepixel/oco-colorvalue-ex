@@ -37,11 +37,11 @@ export class OCOValueEX extends TinyColor {
 	toArrayRGBA() {
 		const alphaSuffix = this.alphaActive ? `, ${this._a}` : ''
 		return `[${
-			this._r / 255.0
+			this._r / 255
 		}, ${
-			this._g / 255.0
+			this._g / 255
 		}, ${
-			this._b / 255.0
+			this._b / 255
 		}${alphaSuffix}]`
 	}
 

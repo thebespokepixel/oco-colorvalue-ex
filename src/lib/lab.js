@@ -17,9 +17,9 @@ function round(number, precision) {
 
 function isValidLab(input) {
 	const test = {
-		L: (input.L >= 0.0 && input.L <= 100.0),
-		a: (input.a >= -127.0 && input.a <= 127.0),
-		b: (input.b >= -127.0 && input.b <= 127.0)
+		L: (input.L >= 0 && input.L <= 100),
+		a: (input.a >= -127 && input.a <= 127),
+		b: (input.b >= -127 && input.b <= 127)
 	}
 	return (test.L && test.a && test.b)
 }
