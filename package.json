@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/thebespokepixel/oco-colorvalue-ex#readme",
   "dependencies": {
-    "@thebespokepixel/es-tinycolor": "^1.0.6",
+    "@thebespokepixel/es-tinycolor": "^2.0.0",
     "chroma-js": "^2.0.4",
     "color-convert": "^2.0.0",
     "opencolor": "^0.2.0"
