@@ -1,6 +1,6 @@
 {
   "name": "@thebespokepixel/oco-colorvalue-ex",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "module": "index.mjs",
