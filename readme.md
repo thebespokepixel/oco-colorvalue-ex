@@ -9,8 +9,7 @@
 
 ##### Development Status
 
-[![Greenkeeper](https://badges.greenkeeper.io/thebespokepixel/oco-colorvalue-ex.svg)](https://greenkeeper.io/ "Greenkeeper") [![Travis](https://img.shields.io/travis/com/thebespokepixel/oco-colorvalue-ex/develop?logo=travis)](https://travis-ci.com/thebespokepixel/oco-colorvalue-ex "Travis")  
- [![David](https://david-dm.org/thebespokepixel/oco-colorvalue-ex/develop/status.svg)](https://david-dm.org/thebespokepixel/oco-colorvalue-ex/develop "David") [![David-developer](https://david-dm.org/thebespokepixel/oco-colorvalue-ex/develop/dev-status.svg)](https://david-dm.org/thebespokepixel/oco-colorvalue-ex/develop?type=dev "David-developer")  
+[![Travis](https://img.shields.io/travis/com/thebespokepixel/oco-colorvalue-ex/develop?logo=travis)](https://travis-ci.com/thebespokepixel/oco-colorvalue-ex "Travis") [![David](https://david-dm.org/thebespokepixel/oco-colorvalue-ex/develop/status.svg)](https://david-dm.org/thebespokepixel/oco-colorvalue-ex/develop "David") [![David-developer](https://david-dm.org/thebespokepixel/oco-colorvalue-ex/develop/dev-status.svg)](https://david-dm.org/thebespokepixel/oco-colorvalue-ex/develop?type=dev "David-developer")  
  [![Snyk](https://snyk.io/test/github/thebespokepixel/oco-colorvalue-ex/badge.svg)](https://snyk.io/test/github/thebespokepixel/oco-colorvalue-ex "Snyk") [![Code-climate](https://api.codeclimate.com/v1/badges/f73b8ca08452e5a59e38/maintainability)](https://codeclimate.com/github/thebespokepixel/oco-colorvalue-ex/maintainability "Code-climate") [![Coverage](https://api.codeclimate.com/v1/badges/f73b8ca08452e5a59e38/test_coverage)](https://codeclimate.com/github/thebespokepixel/oco-colorvalue-ex/test_coverage "Coverage")   
 
 ##### Documentation/Help
