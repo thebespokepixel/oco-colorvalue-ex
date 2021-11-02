@@ -14,7 +14,7 @@ function isValidCMYK(input, min, max) {
 		cyan: (input.cyan >= min && input.cyan <= max),
 		magenta: (input.magenta >= min && input.magenta <= max),
 		yellow: (input.yellow >= min && input.yellow <= max),
-		black: (input.black >= min && input.black <= max)
+		black: (input.black >= min && input.black <= max),
 	}
 	return (test.cyan && test.magenta && test.yellow && test.black)
 }
@@ -24,14 +24,14 @@ function cmykToRgba(raw) {
 		raw.cyan,
 		raw.magenta,
 		raw.yellow,
-		raw.black
+		raw.black,
 	)
 	base.alpha(raw.alpha || 1)
 	return {
 		r: base.get('rgb.r'),
 		g: base.get('rgb.g'),
 		b: base.get('rgb.b'),
-		a: base.alpha()
+		a: base.alpha(),
 	}
 }
 
@@ -48,9 +48,9 @@ function cmykToString(cmyka) {
 	y = Math.round(y)
 	k = Math.round(k)
 
-	return (a === 1) ?
-		`cmyk(${c}%, ${m}%, ${y}%, ${k}%)` :
-		`cmyka(${c}%, ${m}%, ${y}%, ${k}%, ${a})`
+	return (a === 1)
+		? `cmyk(${c}%, ${m}%, ${y}%, ${k}%)`
+		: `cmyka(${c}%, ${m}%, ${y}%, ${k}%, ${a})`
 }
 
 api.shouldHandleInput = input => typeof input === 'object' && isValidCMYK(input, 0, 1)

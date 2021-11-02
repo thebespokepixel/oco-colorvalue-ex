@@ -1,5 +1,5 @@
 import test from 'ava'
-import {OCOValueEX} from '..'
+import {OCOValueEX} from '../index.js'
 
 // <http://www.w3.org/TR/css3-color/#svg-color>
 const names = {
@@ -151,16 +151,16 @@ const names = {
 	white: 'fff',
 	whitesmoke: 'f5f5f5',
 	yellow: 'ff0',
-	yellowgreen: '9acd32'
+	yellowgreen: '9acd32',
 }
 
 test('CSS Named colors', t => {
 	const colorNames = Object.keys(names)
 	t.plan(colorNames.length * 3)
-	colorNames.forEach(name => {
+	for (const name of colorNames) {
 		const c = new OCOValueEX(name, name)
 		t.is(c.name, name)
 		t.is(c.toHex(true), names[name])
 		t.is(c.toHexString(true), `#${names[name]}`)
-	})
+	}
 })

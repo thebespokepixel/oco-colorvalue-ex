@@ -6,8 +6,8 @@
 
 import oco from 'opencolor'
 import {TinyColor} from '@thebespokepixel/es-tinycolor'
-import './cmyk'
-import './lab'
+import './cmyk.js'
+import './lab.js'
 
 export class OCOValueEX extends TinyColor {
 	constructor(color_, name_, options_) {
@@ -71,8 +71,8 @@ export class OCOValueEX extends TinyColor {
 				color_._name,
 				[new oco.ColorValue('original', color_.toRgbString(), color_)],
 				'Color',
-				-1
-			))
+				-1,
+			)),
 		)
 	}
 }

@@ -19,7 +19,7 @@ function isValidLab(input) {
 	const test = {
 		L: (input.L >= 0 && input.L <= 100),
 		a: (input.a >= -127 && input.a <= 127),
-		b: (input.b >= -127 && input.b <= 127)
+		b: (input.b >= -127 && input.b <= 127),
 	}
 	return (test.L && test.a && test.b)
 }
@@ -28,14 +28,14 @@ function labToRgba(raw) {
 	const base = chroma.lab(
 		raw.L,
 		raw.a,
-		raw.b
+		raw.b,
 	)
 	base.alpha(raw.alpha || 1)
 	return {
 		r: base.get('rgb.r'),
 		g: base.get('rgb.g'),
 		b: base.get('rgb.b'),
-		a: base.alpha()
+		a: base.alpha(),
 	}
 }
 
@@ -51,9 +51,9 @@ function labToString(laba) {
 	a = round(a, 2)
 	b = round(b, 2)
 
-	return (alpha === 1) ?
-		`lab(${L}%, ${a}, ${b})` :
-		`laba(${L}%, ${a}, ${b}, ${alpha})`
+	return (alpha === 1)
+		? `lab(${L}%, ${a}, ${b})`
+		: `laba(${L}%, ${a}, ${b}, ${alpha})`
 }
 
 api.shouldHandleInput = input => typeof input === 'object' && isValidLab(input)

@@ -1,6 +1,6 @@
 import test from 'ava'
 import {parse, render} from 'opencolor'
-import {OCOValueEX} from '..'
+import {OCOValueEX} from '../index.js'
 
 const r = new OCOValueEX('red', 'Test Red')
 const g = new OCOValueEX('green', 'Test Green')
