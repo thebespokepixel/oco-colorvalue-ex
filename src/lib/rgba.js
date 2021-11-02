@@ -5,18 +5,18 @@
 
 import {TinyColor} from '@thebespokepixel/es-tinycolor'
 import chroma from 'chroma-js'
-import {OCOValueEX} from './ocovalueex'
+import {OCOValueEX} from './ocovalueex.js'
 
 export function fromPrecise(raw) {
 	const base = chroma.gl([
 		raw.red,
 		raw.green,
-		raw.blue
+		raw.blue,
 	])
 	return new OCOValueEX(
 		new TinyColor(
-			raw.alpha ? base.alpha(raw.alpha).css() : base.css()
-		), raw.name
+			raw.alpha ? base.alpha(raw.alpha).css() : base.css(),
+		), raw.name,
 	)
 }
 
@@ -27,8 +27,8 @@ export function fromBytes(raw) {
 				raw.red / 255,
 				raw.green / 255,
 				raw.blue / 255,
-				raw.alpha / 255
+				raw.alpha / 255,
 			]).css()),
-		raw.name
+		raw.name,
 	)
 }

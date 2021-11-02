@@ -1,5 +1,5 @@
 import test from 'ava'
-import {OCOValueEX} from '..'
+import {OCOValueEX} from '../index.js'
 
 test('Named red', t => {
 	const c = new OCOValueEX({cyan: 0, magenta: 1, yellow: 1, black: 0}, 'Test Red')
