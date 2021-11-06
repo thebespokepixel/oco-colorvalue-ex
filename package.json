@@ -1,6 +1,6 @@
 {
   "name": "@thebespokepixel/oco-colorvalue-ex",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Extended color conversions and handling for Open Color",
   "main": "index.js",
   "types": "index.d.ts",
@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/thebespokepixel/oco-colorvalue-ex#readme",
   "dependencies": {
-    "@thebespokepixel/es-tinycolor": "^3.0.4",
+    "@thebespokepixel/es-tinycolor": "^3.0.5",
     "chroma-js": "^2.1.2",
     "color-convert": "^2.0.1",
     "opencolor": "^0.2.0"
@@ -52,11 +52,11 @@
     "@types/estree": "^0.0.50",
     "ava": "^4.0.0-rc.1",
     "c8": "^7.10.0",
-    "documentation-theme-bespoke": "^2.0.12",
+    "documentation-theme-bespoke": "^2.0.14",
     "nyc": "^15.1.0",
     "rollup": "^2.59.0",
     "rollup-plugin-cleanup": "^3.2.1",
-    "xo": "^0.46.3"
+    "xo": "^0.46.4"
   },
   "xo": {
     "semicolon": false,
@@ -64,8 +64,8 @@
     "ignores": [
       "index*.js",
       "index.d.ts",
-      "lib/**",
-      "docs/**"
+      "docs/**",
+      "coverage/**"
     ]
   },
   "badges": {
